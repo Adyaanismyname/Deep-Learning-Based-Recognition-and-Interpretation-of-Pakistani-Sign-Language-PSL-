@@ -1,0 +1,40 @@
+[project]
+name = "psl_project"
+version = "0.1.0"
+description = "Real-time Pakistan Sign Language recognition"
+requires-python = ">=3.11"
+dependencies = [
+    "timm>=1.0.20",
+]
+
+[dependency-groups]
+default = [
+    # PyTorch ecosystem - latest stable versions with CUDA support
+    "torch==2.4.1",
+    "torchvision==0.19.1",
+    "torchaudio==2.4.1",
+    
+    # Hugging Face ecosystem - latest versions with performance improvements
+    "transformers==4.45.2",
+    "datasets==3.0.1",
+    "tokenizers==0.20.1",
+    "accelerate==1.0.1",
+    
+    # Computer Vision
+    "opencv-python==4.10.0.84",
+    "Pillow==10.4.0",
+    
+    # Data Science stack
+    "numpy==1.26.4",
+    "pandas==2.2.3",
+    "scikit-learn==1.5.2",
+    
+    # Visualization
+    "matplotlib==3.9.2",
+    "seaborn==0.13.2",
+    
+    # Utilities
+    "tqdm==4.66.5",
+    "python-dotenv==1.0.1"
+]
+
