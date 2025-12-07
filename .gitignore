@@ -1,5 +1,41 @@
-checkpoints
-Dataset
-Dataset_Augmented
-.venv
-features
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints
+
+# Model checkpoints
+checkpoints/
+*.pth
+
+# Datasets
+Dataset/
+Dataset_Augmented/
+features/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test files
+test.py
+test_file.py

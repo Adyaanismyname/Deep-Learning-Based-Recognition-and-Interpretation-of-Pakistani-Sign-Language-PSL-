@@ -2,18 +2,24 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, random_split
-import sys
 import os
 from tqdm import tqdm
-
-#from models.lstm import PSL_LSTM
-#from models.vgg_feature_extractor import VGGFeatureExtractor
-#from dataloader.dataset_prep_videos import PSLVideoDataset, train_transform
+from models.lstm import PSL_LSTM
+from models.vgg_feature_extractor import VGGFeatureExtractor
+from dataloader.dataset_prep_videos import PSLVideoDataset, train_transform
 
 CONFIG = {
-    'batch_size': 8, 'train_split': 0.7, 'val_split': 0.15, 'test_split': 0.15, 
-    'num_epochs': 250, 'learning_rate': 0.001,
-    'weight_decay': 1e-4, 'patience': 15, 'min_delta': 0.001, 'max_frames': 30, 'sample_rate': 2,
+    'batch_size': 8,
+    'train_split': 0.7,
+    'val_split': 0.15,
+    'test_split': 0.15,
+    'num_epochs': 250,
+    'learning_rate': 0.001,
+    'weight_decay': 1e-4,
+    'patience': 15,
+    'min_delta': 0.001,
+    'max_frames': 30,
+    'sample_rate': 2,
     'vgg_checkpoint': 'checkpoints/vgg16_psl_best.pth'
 }
 

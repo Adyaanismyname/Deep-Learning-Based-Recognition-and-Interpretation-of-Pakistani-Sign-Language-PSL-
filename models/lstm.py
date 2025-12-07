@@ -4,6 +4,8 @@ import torch.nn.functional as F
 
 
 class PSL_LSTM(nn.Module):
+    """LSTM model with attention mechanism for sign language gesture recognition."""
+    
     def __init__(self, input_size=512, hidden_size=256, num_layers=2, num_classes=4, dropout=0.5, bidirectional=True):
         super(PSL_LSTM, self).__init__()
         

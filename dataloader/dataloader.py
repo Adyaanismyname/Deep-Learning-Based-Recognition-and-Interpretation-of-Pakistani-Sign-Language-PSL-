@@ -54,11 +54,13 @@ def test_video_dataset():
     print("=" * 60)
     
     dataset = PSLVideoDataset(
-        root_dir='Dataset_Augmented', 
+        root_dir='Dataset', 
         transform=video_train_transform,
         max_frames=30,
         sample_rate=2
     )
+    
+    print(len(dataset))
     
     # Note: Can't use DataLoader with batch>1 for videos because 
     # different videos may have different number of frames
