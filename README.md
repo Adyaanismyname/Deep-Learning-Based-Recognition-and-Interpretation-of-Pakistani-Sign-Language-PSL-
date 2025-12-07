@@ -6,22 +6,22 @@ A deep learning system for real-time Pakistani Sign Language recognition that co
 
 This project implements a hybrid approach to sign language recognition:
 
-- **Static Signs**: VGG16 CNN classifier for stationary hand poses (36 classes)
+- **Static Signs**: InceptionV3 CNN classifier for stationary hand poses (36 classes)
 - **Dynamic Gestures**: LSTM with attention mechanism for movement-based signs (4 classes)
 - **Intelligent Switching**: Automatic motion detection to switch between models in real-time
 
 ## 🏗️ Architecture
 
-### Static Classifier (VGG16)
+### Static Classifier (InceptionV3)
 
-- Pre-trained VGG16 fine-tuned on PSL static signs
+- Pre-trained InceptionV3 fine-tuned on PSL static signs
 - MediaPipe hand detection for robust region of interest extraction
 - 36 sign classes from the PSL alphabet
 
 ### Dynamic Classifier (LSTM + Attention)
 
 - Bidirectional LSTM with attention mechanism
-- VGG16 feature extractor for frame-level representations
+- InceptionV3 feature extractor for frame-level representations
 - Temporal modeling for gesture sequences
 - 4 dynamic gesture classes
 
@@ -40,16 +40,16 @@ dl-semester-project/
 ├── infer_lstm_video.py        # Dynamic gesture inference
 ├── models/
 │   ├── lstm.py                # LSTM model with attention
-│   ├── vgg.py                 # VGG16 configuration
+│   ├── vgg.py                 # InceptionV3 configuration
 │   ├── vgg_feature_extractor.py
 │   ├── extract_features.py    # Pre-extract features for training
 │   ├── train_lstm.py          # LSTM training script
-│   └── train_vgg.py           # VGG training script
+│   └── train_vgg.py           # InceptionV3 training script
 ├── dataloader/
 │   ├── dataset_prep.py        # Image dataset utilities
 │   └── dataset_prep_videos.py # Video dataset utilities
 ├── checkpoints/
-│   ├── vgg16_psl_best.pth     # Trained VGG16 model
+│   ├── vgg16_psl_best.pth     # Trained InceptionV3 model
 │   └── lstm_psl_best.pth      # Trained LSTM model
 └── Dataset/                   # Training data
 ```
@@ -96,7 +96,7 @@ python infer_lstm_video.py
 
 ## 🎓 Training
 
-### Training VGG16 (Static Classifier)
+### Training InceptionV3 (Static Classifier)
 
 ```bash
 cd models
@@ -106,7 +106,7 @@ python train_vgg.py --dataset-path ../Dataset --epochs 50 --batch-size 32
 ### Training LSTM (Dynamic Classifier)
 
 ```bash
-# Step 1: Extract VGG features (run once)
+# Step 1: Extract InceptionV3 features (run once)
 python extract_features.py
 
 # Step 2: Train LSTM
@@ -115,11 +115,11 @@ python train_lstm.py --epochs 250
 
 ## 📊 Model Performance
 
-### Static Classifier (VGG16)
+### Static Classifier (InceptionV3)
 
 - **Classes**: 36 PSL alphabet signs
 - **Accuracy**: ~95% validation accuracy
-- **Architecture**: VGG16 with fine-tuned last 2 blocks
+- **Architecture**: InceptionV3 with fine-tuned layers
 
 ### Dynamic Classifier (LSTM)
 
@@ -168,7 +168,7 @@ sentence_builder = SentenceBuilder()
 ## 🙏 Acknowledgments
 
 - Dataset: Pakistani Sign Language dataset
-- Pre-trained weights: ImageNet (VGG16)
+- Pre-trained weights: ImageNet (InceptionV3)
 - Hand detection: MediaPipe Hands
 
 ## 📝 License
