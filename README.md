@@ -118,13 +118,13 @@ python train_lstm.py --epochs 250
 ### Static Classifier (InceptionV3)
 
 - **Classes**: 36 PSL alphabet signs
-- **Accuracy**: ~95% validation accuracy
+- **Accuracy**: ~98.14% validation accuracy
 - **Architecture**: InceptionV3 with fine-tuned layers
 
 ### Dynamic Classifier (LSTM)
 
 - **Classes**: 4 dynamic gestures (2-Hay, Alifmad, Aray, Jeem)
-- **Accuracy**: ~92% validation accuracy
+- **Accuracy**: ~98.15% validation accuracy
 - **Architecture**: 2-layer Bidirectional LSTM with attention
 
 ## 🎮 Controls
